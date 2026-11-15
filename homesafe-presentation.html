@@ -320,9 +320,9 @@ ul, ol { list-style: none; }
 .team { display: grid; grid-template-columns: 560px 1fr; column-gap: 120px; align-items: center; }
 .team .h2 { font-size: 170px; }
 .team .mini-geo { position: relative; width: 220px; height: 260px; margin-top: 70px; }
-.team .mini-geo span:nth-child(1) { position: absolute; left: 0; top: 0; width: 180px; height: 180px; border: 3px solid var(--ink); border-radius: 50%; }
-.team .mini-geo span:nth-child(2) { position: absolute; left: 30px; top: 30px; width: 120px; height: 120px; background: var(--warm); border-radius: 50%; }
-.team .mini-geo span:nth-child(3) { position: absolute; left: 260px; top: 88px; width: 28px; height: 28px; border-radius: 50%; background: var(--rust); }
+:is(.team, .refl) .mini-geo span:nth-child(1) { position: absolute; left: 0; top: 0; width: 180px; height: 180px; border: 3px solid var(--ink); border-radius: 50%; }
+:is(.team, .refl) .mini-geo span:nth-child(2) { position: absolute; left: 30px; top: 30px; width: 120px; height: 120px; background: var(--warm); border-radius: 50%; }
+:is(.team, .refl) .mini-geo span:nth-child(3) { position: absolute; left: 260px; top: 88px; width: 28px; height: 28px; border-radius: 50%; background: var(--rust); }
 .roster { border-top: 3px solid var(--ink); }
 .roster li {
     display: grid; grid-template-columns: 70px 1fr auto; align-items: baseline;
@@ -597,6 +597,28 @@ ul, ol { list-style: none; }
 .end h2 em { font-style: italic; font-weight: 700; color: var(--rust); }
 .end .lede { position: absolute; left: 120px; top: 720px; }
 .end .box { position: absolute; left: 120px; bottom: 110px; font: 600 26px/1 var(--font-body); letter-spacing: 0.04em; padding: 22px 34px; }
+
+/* ===========================================================
+   SLIDES 22–28 — INDIVIDUAL REFLECTIONS (member-list order)
+   Left: who (name, student ID, role). Right: two reflection parts.
+   fitReflections() (JS) steps --rn (name size) and --rf (body size)
+   down until each slide fits its frame.
+   =========================================================== */
+.refl { display: grid; grid-template-columns: 500px 1fr; column-gap: 100px; align-items: center; }
+.refl .kicker { margin-bottom: 18px; }
+.refl .ri { font: 600 22px/1 var(--font-body); font-style: normal; letter-spacing: 0.1em; color: var(--ink-3); margin-left: 12px; vertical-align: 4px; }
+.rname { font: 900 var(--rn, 84px)/0.98 var(--font-display); letter-spacing: -0.035em; color: var(--ink); white-space: nowrap; }
+.rname em { display: block; font-style: italic; font-weight: 700; color: var(--rust); }
+.refl .sid { font: 500 28px/1 var(--font-body); color: var(--ink-2); letter-spacing: 0.05em; margin-top: 30px; }
+.rrole {
+    margin-top: 32px; padding-top: 18px; border-top: 2px solid var(--ink);
+    font: 600 20px/1.4 var(--font-body); letter-spacing: 0.14em; text-transform: uppercase; color: var(--rust);
+}
+.refl .mini-geo { position: relative; width: 300px; height: 180px; margin-top: 56px; }
+.rtext { display: flex; flex-direction: column; gap: calc(var(--rf, 28px) * 1.5); }
+.rpart { border-top: 3px solid var(--ink); padding-top: 20px; }
+.rpart .label { margin-bottom: 14px; }
+.rbody { font: 400 var(--rf, 28px)/1.45 var(--font-body); color: var(--ink-2); }
 
 /* ===========================================================
    OUTSIDE-STAGE UI: progress bar, notes panel, edit toggle
@@ -1223,6 +1245,129 @@ body.mouse-active .nav-btn, .nav-btn:focus-visible { opacity: 1; pointer-events:
     <aside class="notes">Thank you. Open the floor for questions.</aside>
 </section>
 
+<!-- ===========================================================
+     22–28 · INDIVIDUAL REFLECTIONS (same order as the member list)
+     Text is each member's own reflection, kept as written.
+     =========================================================== -->
+<section class="slide" data-section="Individual Reflection" aria-label="Reflection: Kaweewat Sricharoenchit">
+    <div class="frame refl">
+        <div class="who">
+            <p class="kicker reveal" style="--d:.1s">Individual reflection <span class="ri tnum">01 / 07</span></p>
+            <h2 class="rname reveal" style="--d:.2s">Kaweewat <em>Sricharoenchit</em></h2>
+            <p class="sid tnum reveal" style="--d:.3s">6622782181</p>
+            <p class="rrole reveal" style="--d:.4s">Coordination · personal case · slides</p>
+            <div class="mini-geo reveal" style="--d:.5s" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+        <div class="rtext">
+            <div class="rpart reveal" style="--d:.35s"><p class="label">Project &amp; my part</p><p class="rbody">For our group project HomeSafe, we designed a smart exoskeleton with hip airbags and a caregiver app to protect older people in Thailand from falls. My part was to coordinate the team and divide the work between members, bring in a personal case, my grandma, who lives with knee osteoarthritis, to show why this problem matters, and put together our final presentation slides.</p></div>
+            <div class="rpart reveal" style="--d:.5s"><p class="label">What I learned</p><p class="rbody">The most important thing I gained from this project is trust. It was my first time working with most of this group (except Julathit), so at the beginning I did not really trust them with the tasks, but many of them showed me that I could. Veetawit was the one who brought me back to my senses whenever I started to panic. With Leo and Sarah, we had to communicate in English, and my English is not that good, yet they still handled every task they were given very well. Chindanai and Suppanat were great at their own parts, especially at “good morning, good afternoon, good night”. Julathit is someone I can always count on, but it would be even better if Julathit came in a little earlier. In the end, learning to trust my teammates made the work lighter and the result better.</p></div>
+        </div>
+    </div>
+    <aside class="notes">Reflection 1 of 7, Kaweewat: coordinated the team and split the work, brought in the personal case of my grandma, and put the slides together. Main lesson: learning to trust teammates.</aside>
+</section>
+
+<section class="slide" data-section="Individual Reflection" aria-label="Reflection: Julathit Chetsawang">
+    <div class="frame refl">
+        <div class="who">
+            <p class="kicker reveal" style="--d:.1s">Individual reflection <span class="ri tnum">02 / 07</span></p>
+            <h2 class="rname reveal" style="--d:.2s">Julathit <em>Chetsawang</em></h2>
+            <p class="sid tnum reveal" style="--d:.3s">6622782280</p>
+            <p class="rrole reveal" style="--d:.4s">Technical concept · prototype design</p>
+            <div class="mini-geo reveal" style="--d:.5s" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+        <div class="rtext">
+            <div class="rpart reveal" style="--d:.35s"><p class="label">Project &amp; my part</p><p class="rbody">For this group project, our team proposed SafeStep, a smart robotic exoskeleton designed to improve mobility and reduce fall-related injuries among elderly people in Thailand. My main contribution was developing the technical concept, focusing on how AI-based motion prediction, robotic assistance, and hip airbags could work together. I also explored the initial prototype design, including motorized hip joints, motion sensors, and safety mechanisms.</p></div>
+            <div class="rpart reveal" style="--d:.5s"><p class="label">What I learned</p><p class="rbody">One of the most important things I learned from this project is how to turn an idea into a practical innovation. From Drucker's method, I learned that innovation begins with identifying real-world problems and finding suitable solutions. I also realized that technical feasibility alone is not enough, as cost, safety, and usability must also be considered. Overall, this project taught me that successful innovation requires both engineering knowledge and an understanding of people's needs.</p></div>
+        </div>
+    </div>
+    <aside class="notes">Reflection 2 of 7, Julathit: developed the technical concept (AI motion prediction, robotic assistance, hip airbags) and the first prototype design. Lesson: innovation needs engineering knowledge and an understanding of people's needs.</aside>
+</section>
+
+<section class="slide" data-section="Individual Reflection" aria-label="Reflection: Veetawit Chalermpornpong">
+    <div class="frame refl">
+        <div class="who">
+            <p class="kicker reveal" style="--d:.1s">Individual reflection <span class="ri tnum">03 / 07</span></p>
+            <h2 class="rname reveal" style="--d:.2s">Veetawit <em>Chalermpornpong</em></h2>
+            <p class="sid tnum reveal" style="--d:.3s">6622782074</p>
+            <p class="rrole reveal" style="--d:.4s">Drucker's method · slides</p>
+            <div class="mini-geo reveal" style="--d:.5s" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+        <div class="rtext">
+            <div class="rpart reveal" style="--d:.35s"><p class="label">Project &amp; my part</p><p class="rbody">For this group project, we have decided to go for exo-skeleton for elderly people in Thailand. Since one of our members has already researched this topic, we already have the data. For my part of doing the slides, I have to link this concept with Drucker’s method. By trying to link this with Drucker’s I have to reread all Drucker’s principle and review it.</p></div>
+            <div class="rpart reveal" style="--d:.5s"><p class="label">What I learned</p><p class="rbody">The key things I have learned is that separating the workload between members is the most important part of any team project or work. It improve workflow better and work will be done on time too. If one person carries all the work, it would be horrible for the team (except that person is overpowered). No work will be done and the rest of the team just feels like emotional support and not learn anything new at all. Finally, the most important of all for this type of project that needs an innovation is creativity without it the project is nothing.</p></div>
+        </div>
+    </div>
+    <aside class="notes">Reflection 3 of 7, Veetawit: linked the concept to Drucker's method for the slides. Lessons: share the workload fairly, and creativity drives innovation.</aside>
+</section>
+
+<section class="slide" data-section="Individual Reflection" aria-label="Reflection: Léopold-Xavier Laurent">
+    <div class="frame refl">
+        <div class="who">
+            <p class="kicker reveal" style="--d:.1s">Individual reflection <span class="ri tnum">04 / 07</span></p>
+            <h2 class="rname reveal" style="--d:.2s">Léopold-Xavier <em>Laurent</em></h2>
+            <p class="sid tnum reveal" style="--d:.3s">6922808125</p>
+            <p class="rrole reveal" style="--d:.4s">Validation &amp; testing</p>
+            <div class="mini-geo reveal" style="--d:.5s" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+        <div class="rtext">
+            <div class="rpart reveal" style="--d:.35s"><p class="label">Project &amp; my part</p><p class="rbody">In our group project, we developed a smart exoskeleton with hip airbags to protect older people in Thailand from fall injuries and help them get up again after a fall. I was responsible for the Validation and Testing part of the pitch. I turned our product idea into five testable hypotheses (“We believe that…”) covering desirability, usability and feasibility. I then designed a three-phase validation plan and defined a metric for each hypothesis. I also contribted to the pitch slides together with my teammates.</p></div>
+            <div class="rpart reveal" style="--d:.5s"><p class="label">What I learned</p><p class="rbody">This part showed me how Ries’s Lean Startup approach works in practice: before building an expensive product, you have to identify the riskiest assumptions and test them as cheaply as possible. For us, that meant 15–20 interviews, a test with a demo video and a pre-registration page, and an energy calculation in Phase 1. In Phase 2 it meant an ESP32 + IMU box tested with public fall datasets, and a non-functional dummy belt worn by seniors. A full prototype with actuated joints and airbags only comes in Phase 3, and only if the earlier phases pass. Finally, I learned that the technical and the human sides cannot be separated. Detecting a fall early enough is a feasibility question, but whether seniors will wear the device for hours in Thailand’s heat and humidity is just as decisive.</p></div>
+        </div>
+    </div>
+    <aside class="notes">Reflection 4 of 7, Léopold: turned the idea into five testable hypotheses and a three-phase validation plan with metrics. Lesson: test the riskiest assumptions cheaply first, and the technical and human sides belong together.</aside>
+</section>
+
+<section class="slide" data-section="Individual Reflection" aria-label="Reflection: Chindanai Vipusirikup">
+    <div class="frame refl">
+        <div class="who">
+            <p class="kicker reveal" style="--d:.1s">Individual reflection <span class="ri tnum">05 / 07</span></p>
+            <h2 class="rname reveal" style="--d:.2s">Chindanai <em>Vipusirikup</em></h2>
+            <p class="sid tnum reveal" style="--d:.3s">6622770566</p>
+            <p class="rrole reveal" style="--d:.4s">Drucker's method · slides</p>
+            <div class="mini-geo reveal" style="--d:.5s" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+        <div class="rtext">
+            <div class="rpart reveal" style="--d:.35s"><p class="label">Project &amp; my part</p><p class="rbody">About 1 in 3 of these fatal or severe fall victims are older adults aged 60 and above. So we have decided to do a smart exo-skeleton with a hip airbag for old people in Thailand. I was helping in doing the drucker’s method parts and summing up all the info into the slide.</p></div>
+            <div class="rpart reveal" style="--d:.5s"><p class="label">What I learned</p><p class="rbody">Drucker’s method taught me that innovation is not about waiting for sudden inspiration like Issac Newton that apple need to be fell on his head in order to invent gravity, but by observing the real world problems like demographic shifts or gaps in daily safety and focusing on simple and practical solutions. Finally, summarizing our research and Drucker’s framework onto the presentation slides taught me how to distill complex data and engineering concepts into clear, points that anyone can quickly understand.</p></div>
+        </div>
+    </div>
+    <aside class="notes">Reflection 5 of 7, Chindanai: worked on the Drucker's method part and summarised the research onto the slides. Lesson: innovation comes from observing real problems, not waiting for inspiration.</aside>
+</section>
+
+<section class="slide" data-section="Individual Reflection" aria-label="Reflection: Suppanat Soonthorn">
+    <div class="frame refl">
+        <div class="who">
+            <p class="kicker reveal" style="--d:.1s">Individual reflection <span class="ri tnum">06 / 07</span></p>
+            <h2 class="rname reveal" style="--d:.2s">Suppanat <em>Soonthorn</em></h2>
+            <p class="sid tnum reveal" style="--d:.3s">6622770574</p>
+            <p class="rrole reveal" style="--d:.4s">Research &amp; data · Drucker's method</p>
+            <div class="mini-geo reveal" style="--d:.5s" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+        <div class="rtext">
+            <div class="rpart reveal" style="--d:.35s"><p class="label">Project &amp; my part</p><p class="rbody">In Thailand, accidental falls are the second leading cause of unintentional deaths, and about one in three of these victims are adults aged 60 and older. Because Thailand is rapidly becoming a "super-aged society", our group decided to design a smart exoskeleton with a built-in hip airbag. My job was to research and analyse data to support our project idea and make our slides based on Drucker's method.</p></div>
+            <div class="rpart reveal" style="--d:.5s"><p class="label">What I learned</p><p class="rbody">Working on this project taught me a lot about both innovation and teamwork. From Drucker’s method, I learned that good innovation comes from hard work, not just a lucky idea. Instead of waiting for inspiration, you have to look closely at real-world changes and build a solution that is simple and solves one clear problem well. At the same time, working in a group showed me how important it is to agree on one clear plan. When everyone has different ideas, it is easy to waste time and lose focus. In the end, I realized that while listening to each other helps us move forward, creativity and focus, as well as good teamwork is what bring a new idea to fruition.</p></div>
+        </div>
+    </div>
+    <aside class="notes">Reflection 6 of 7, Suppanat: researched and analysed the data and built the Drucker's method slides. Lessons: innovation comes from hard work, and a team needs one clear plan.</aside>
+</section>
+
+<section class="slide" data-section="Individual Reflection" aria-label="Reflection: Sarah Scherf">
+    <div class="frame refl">
+        <div class="who">
+            <p class="kicker reveal" style="--d:.1s">Individual reflection <span class="ri tnum">07 / 07</span></p>
+            <h2 class="rname reveal" style="--d:.2s">Sarah <em>Scherf</em></h2>
+            <p class="sid tnum reveal" style="--d:.3s">6922808190</p>
+            <p class="rrole reveal" style="--d:.4s">Business Model Canvas</p>
+            <div class="mini-geo reveal" style="--d:.5s" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+        <div class="rtext">
+            <div class="rpart reveal" style="--d:.35s"><p class="label">Project &amp; my part</p><p class="rbody">In our group project HomeSafe, we developed a smart exoskeleton with hip airbags and a caregiver app to protect older people in Thailand from fall injuries. I was responsible for the Business Model Canvas, where I showed how the venture creates, delivers and captures value, from customer segments and revenue streams to key partners and costs. I also worked on the pitch slides together with my teammates.</p></div>
+            <div class="rpart reveal" style="--d:.5s"><p class="label">What I learned</p><p class="rbody">This project showed me how Drucker’s disciplined innovation can be linked to a real-world problem: Thailand’s ageing population and the rising number of falls are an opportunity that can be analysed systematically instead of guessed. Ries’s validated learning mindset taught me to turn ideas into testable hypotheses (“We believe that…”), to test them cheaply with interviews, a smoke test and simple prototypes, and to use data to decide whether to pivot or persevere. I also learned how much collaboration, Design Thinking and evidence-based decisions matter: understanding seniors, their families and caregivers came before designing the product. About the problem itself, I learned that falls are a serious and growing risk for older people, and that the danger lies not only in the impact but also in not being found quickly afterwards. Our solution addresses both through hip airbags, movement assistance and real-time alerts to caregivers, while images and video are uploaded only after an unanswered fall to protect privacy.</p></div>
+        </div>
+    </div>
+    <aside class="notes">Reflection 7 of 7, Sarah: built the Business Model Canvas. Lessons: Drucker's disciplined innovation, Ries's validated learning, and understanding users before designing the product.</aside>
+</section>
+
 <!-- Tooltip for chart hover (inside the stage so it scales) -->
 <div class="tip" id="tip" role="tooltip"></div>
 </main>
@@ -1562,6 +1707,32 @@ class SlidePresentation {
 }
 
 /* ===========================================================
+   REFLECTION FIT
+   Names and reflection lengths differ per member. Names: find the
+   largest size (--rn) at which each name fits its column, then use the
+   smallest of those on every reflection slide so the series matches.
+   Body (--rf): step down per slide until both parts fit the frame.
+   =========================================================== */
+function fitReflections() {
+    const frames = Array.from(document.querySelectorAll('.refl'));
+    let shared = 84;
+    frames.forEach(frame => {
+        const name = frame.querySelector('.rname');
+        let rn = 84;
+        name.style.setProperty('--rn', rn + 'px');
+        while (name.scrollWidth > name.clientWidth + 1 && rn > 44) name.style.setProperty('--rn', (rn -= 2) + 'px');
+        shared = Math.min(shared, rn);
+    });
+    frames.forEach(frame => {
+        frame.querySelector('.rname').style.setProperty('--rn', shared + 'px');
+        const text = frame.querySelector('.rtext');
+        let rf = 28;
+        text.style.setProperty('--rf', rf + 'px');
+        while (text.offsetHeight > frame.clientHeight && rf > 20) text.style.setProperty('--rf', (rf -= 1) + 'px');
+    });
+}
+
+/* ===========================================================
    INLINE EDITOR
    Hover top-left corner or press E. Edits auto-save to localStorage;
    Ctrl/Cmd+S downloads an updated HTML file.
@@ -1569,7 +1740,7 @@ class SlidePresentation {
 class InlineEditor {
     constructor() {
         this.isActive = false;
-        this.key = 'homesafe-deck-edits-v2';
+        this.key = 'homesafe-deck-edits-v3';
         this.sel = '.slide h1, .slide h2, .slide h3, .slide p, .slide li, .slide td, .slide th, .slide figcaption, .slide .box, .slide .outcomes > div, .slide .tag';
         this.toggleBtn = document.getElementById('editToggle');
         this.toast = document.getElementById('toast');
@@ -1638,6 +1809,10 @@ renderFallChart(document.getElementById('fallChart'));
 renderThaiChart(document.getElementById('thaiChart'));
 const editor = new InlineEditor();
 const deck = new SlidePresentation();
+fitReflections();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitReflections);
+let fitT = null;
+document.addEventListener('input', () => { clearTimeout(fitT); fitT = setTimeout(fitReflections, 300); });
 </script>
 </body>
 </html>
